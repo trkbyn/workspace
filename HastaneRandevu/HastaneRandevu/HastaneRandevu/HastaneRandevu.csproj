@@ -1,0 +1,455 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B3CA132C-2C0A-4757-87B7-8E2C10F41B92}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HastaneRandevu</RootNamespace>
+    <AssemblyName>HastaneRandevu</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logo_RZp_icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.1.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.1.3\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.3.4.1\lib\net40\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Common.Logging.Core, Version=3.4.1.0, Culture=neutral, PublicKeyToken=af08829b84f0328e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Common.Logging.Core.3.4.1\lib\net40\Common.Logging.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.barcodes, Version=7.1.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.4\lib\net40\itext.barcodes.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.forms, Version=7.1.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.4\lib\net40\itext.forms.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.io, Version=7.1.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.4\lib\net40\itext.io.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.kernel, Version=7.1.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.4\lib\net40\itext.kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.layout, Version=7.1.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.4\lib\net40\itext.layout.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.pdfa, Version=7.1.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.4\lib\net40\itext.pdfa.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.sign, Version=7.1.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.4\lib\net40\itext.sign.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.styledxmlparser, Version=7.1.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.4\lib\net40\itext.styledxmlparser.dll</HintPath>
+    </Reference>
+    <Reference Include="itext.svg, Version=7.1.4.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\itext7.7.1.4\lib\net40\itext.svg.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Adminİslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Adminİslemleri.Designer.cs">
+      <DependentUpon>Adminİslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Anasayfa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Anasayfa.Designer.cs">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BosForm.Designer.cs">
+      <DependentUpon>BosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\Kimlik1\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\Kimlik\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="DetayGoster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetayGoster.Designer.cs">
+      <DependentUpon>DetayGoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoktorAnasayfa1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoktorAnasayfa1.Designer.cs">
+      <DependentUpon>DoktorAnasayfa1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoktorDegerlendir.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoktorDegerlendir.Designer.cs">
+      <DependentUpon>DoktorDegerlendir.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoktorSifreHatirla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoktorSifreHatirla.Designer.cs">
+      <DependentUpon>DoktorSifreHatirla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoktorUyeOl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoktorUyeOl.Designer.cs">
+      <DependentUpon>DoktorUyeOl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="doktor_randevu_al_gel.cs" />
+    <Compile Include="Doktor_Randevu_Detay.cs" />
+    <Compile Include="Doktorİslemleri.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Doktorİslemleri.Designer.cs">
+      <DependentUpon>Doktorİslemleri.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Hatirla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Hatirla.Designer.cs">
+      <DependentUpon>Hatirla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HesapBilgilerim.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HesapBilgilerim.Designer.cs">
+      <DependentUpon>HesapBilgilerim.cs</DependentUpon>
+    </Compile>
+    <Compile Include="il_ilce_hastane_klinik.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RandevuArama.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RandevuArama.Designer.cs">
+      <DependentUpon>RandevuArama.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGiris.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGiris.Designer.cs">
+      <DependentUpon>AdminGiris.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RandevuGecmisi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RandevuGecmisi.Designer.cs">
+      <DependentUpon>RandevuGecmisi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RandevuGoster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RandevuGoster.Designer.cs">
+      <DependentUpon>RandevuGoster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="randevular_getir.cs" />
+    <Compile Include="RandevuListele.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RandevuListele.Designer.cs">
+      <DependentUpon>RandevuListele.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rapor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rapor.Designer.cs">
+      <DependentUpon>Rapor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegexUtilities.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Tckimlik.cs" />
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Uyeden_Randevuya.cs" />
+    <Compile Include="UyeOl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UyeOl.Designer.cs">
+      <DependentUpon>UyeOl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\tr.gov.nvi.tckimlik\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Adminİslemleri.resx">
+      <DependentUpon>Adminİslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Anasayfa.resx">
+      <DependentUpon>Anasayfa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BosForm.resx">
+      <DependentUpon>BosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetayGoster.resx">
+      <DependentUpon>DetayGoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoktorAnasayfa1.resx">
+      <DependentUpon>DoktorAnasayfa1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoktorDegerlendir.resx">
+      <DependentUpon>DoktorDegerlendir.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoktorSifreHatirla.resx">
+      <DependentUpon>DoktorSifreHatirla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoktorUyeOl.resx">
+      <DependentUpon>DoktorUyeOl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Doktorİslemleri.resx">
+      <DependentUpon>Doktorİslemleri.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hatirla.resx">
+      <DependentUpon>Hatirla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HesapBilgilerim.resx">
+      <DependentUpon>HesapBilgilerim.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="RandevuArama.resx">
+      <DependentUpon>RandevuArama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGiris.resx">
+      <DependentUpon>AdminGiris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RandevuGecmisi.resx">
+      <DependentUpon>RandevuGecmisi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RandevuGoster.resx">
+      <DependentUpon>RandevuGoster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RandevuListele.resx">
+      <DependentUpon>RandevuListele.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapor.resx">
+      <DependentUpon>Rapor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UyeOl.resx">
+      <DependentUpon>UyeOl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Connected Services\Kimlik1\HastaneRandevu.Kimlik1.TCKimlikNoDogrulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Kimlik1\KPSPublic.wsdl" />
+    <None Include="Connected Services\Kimlik\HastaneRandevu.Kimlik.TCKimlikNoDogrulaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\Kimlik\KPSPublic.wsdl" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Web References\tr.gov.nvi.tckimlik\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\182.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\geri.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx%3fop=TCKimlikNoDogrula">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\tr.gov.nvi.tckimlik\</RelPath>
+      <UpdateFromURL>https://tckimlik.nvi.gov.tr/Service/KPSPublic.asmx%3fop=TCKimlikNoDogrula</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>
+      </CachedAppSettingsObjectName>
+      <CachedSettingsPropName>
+      </CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\tr.gov.nvi.tckimlik\KPSPublic.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\Kimlik1\" />
+    <WCFMetadataStorage Include="Connected Services\Kimlik\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Kimlik\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Kimlik\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Kimlik\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Kimlik1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Kimlik1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\Kimlik1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bluestar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\turquise.jpg" />
+    <Content Include="Resources\Image1.jpg" />
+    <Content Include="Resources\print_15x15.bmp" />
+    <None Include="Resources\print_15x151.bmp" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\browngeri.jpg" />
+    <None Include="Resources\tick.png" />
+    <None Include="Resources\tc.png" />
+    <None Include="Resources\45.png" />
+    <None Include="Resources\1s.png" />
+    <None Include="Resources\2stars.png" />
+    <None Include="Resources\3stars.png" />
+    <None Include="Resources\4stars.png" />
+    <None Include="Resources\1.jpg" />
+    <None Include="Resources\21.jpg" />
+    <Content Include="logo_HrT_icon.ico" />
+    <Content Include="logo_RZp_icon.ico" />
+    <Content Include="Resources\5stars.png" />
+    <None Include="Resources\5stars11.png" />
+    <None Include="Resources\5stars1.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
